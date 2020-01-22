@@ -1,0 +1,93 @@
+<%@ include file="header.jspf"%>
+<div id="header">
+	<h2>CLINIC MANAGEMENT SYSTEM</h2>
+
+</div>
+<div id="nav" class="admin_nav">
+	<ul>
+		<security:authorize access="hasRole('PATIENT')">
+			<li>Patient Dashboard</li>
+			<li class="active"><a href="<c:url value='/'></c:url>">Home</a></li>
+			<li><a href="changePassword">Reset password</a></li>
+			<li><a href="viewPatProfile">View Profile</a></li>
+			<li><a href="getDoctorSchedule">Book appointment</a></li>
+			<li><a href="viewRecordHistory">Record history</a></li>
+			<li><a href="addFeedback">Feedback</a></li>
+			<li><a href="logout">Logout</a></li>
+		</security:authorize>
+		<security:authorize access="hasRole('RECEPTIONIST')">
+			<li>Receptionist Dashboard</li>
+			<li class="active"><a href="<c:url value='/'></c:url>">Home</a></li>
+			<li><a href="changePassword">Reset password</a></li>
+			<li><a href="viewStaffProfile">View Profile</a></li>
+			<li><a href="editStaffProfile">Edit Profile</a></li>
+			<li><a href="patientSearch">Patient Search</a></li>
+			<li><a href="patientForm">Add new Patient</a></li>
+			<li><a href="listAppointment">Manage Appointment</a></li>
+			<li><a href="getWaitingList">Patient WaitingList</a></li>
+			<li><a href="getDoctorSchedule">Doctor Schedules</a></li>
+			<li><a href="listPatients">View All Patients</a></li>
+			<li><a href="logout">Logout</a></li>
+		</security:authorize>
+		<security:authorize access="hasRole('DOCTOR')">
+			<li>Doctor Dashboard</li>
+			<li class="active"><a href="<c:url value='/'></c:url>">Home</a></li>
+			<li><a href="changePassword">Reset password</a></li>
+			<li><a href="viewStaffProfile">View Profile</a></li>
+			<li><a href="appointmentListPerDoctor">Daily appointment</a></li>
+			<li><a href="getWaitingList">Patient WaitingList</a></li>
+			<li><a href="getDoctorSchedule">Doctor Schedules</a></li>
+			<li><a href="listPatients">View All Patients</a></li>
+			<li><a href="viewAllPatientRecords">View Patients Records</a></li>
+			<li><a href="logout">Logout</a></li>
+		</security:authorize>
+		<security:authorize access="hasRole('NURSE')">
+			<li>Nurse Dashboard</li>
+			<li class="active"><a href="<c:url value='/'></c:url>">Home</a></li>
+			<li><a href="changePassword">Reset password</a></li>
+			<li><a href="viewStaffProfile">View Profile</a></li>
+			<li><a href="getWaitingList">Patient WaitingList</a></li>
+			<li><a href="getDoctorSchedule">Doctor Schedules</a></li>
+			<li><a href="listPatients">View All Patients</a></li>
+			<li><a href="viewAllPatientRecords">View Patients Records</a></li>
+			<li><a href="logout">Logout</a></li>
+		</security:authorize>
+
+		<security:authorize access="hasRole('ADMIN')">
+			<li>Admin Dashboard</li>
+			<li class="active"><a href="<c:url value='/'></c:url>">Home</a></li>
+			<li><a href="changePassword">Reset password</a></li>
+			<li><a href="listPatients">Manage Patient</a></li>
+			<li><a href="listStaffs">Manage Staff</a></li>
+			<li><a href="getWaitingList">WaitingList</a></li>
+			<li><a href="getDoctorSchedule">Manage Schedules</a></li>
+			<li><a href="getStock">Manage Stock</a></li>
+			<li><a href="getDrugs">Manage Drugs</a></li>
+			<li><a href="listAppointment">Manage Appointment</a></li>
+			<li><a href="viewFeedback">View feedbacks</a></li>
+			<li><a href="listPayments">Payments</a>
+			<li><a href="viewPie">Statistics & reports</a></li>
+			<li><a href="logout">Logout</a></li>
+		</security:authorize>
+
+		<security:authorize access="hasRole('PHARMACIST')">
+			<li>Pharmacist Dashboard</li>
+			<li class="active"><a href="<c:url value='/'></c:url>">Home</a></li>
+			<li><a href="changePassword">Reset password</a></li>
+			<li><a href="viewStaffProfile">View Profile</a></li>
+			<li><a href="getStock">Manage Stock</a></li>
+			<li><a href="getDrugs">Manage Drugs</a></li>
+			<li><a href="getWaitingList">Patient WaitingList</a></li>
+			<li><a href="getDoctorSchedule">Doctor Schedules</a></li>
+			<li><a href="listPatients">View All Patients</a></li>
+			<li><a href="viewAllPatientRecords">View Patients Records</a></li>
+			<li><a href="listSales">Drug Sales</a></li>
+			<li><a href="logout">Logout</a></li>
+		</security:authorize>
+
+	</ul>
+	<ul>
+
+
+	</ul>
+</div>
